@@ -26,6 +26,8 @@ router.get('/:user_id',checktoken,verifytoken,Usercontroller.getOneUser)
 
 router.put('/:user_id',checktoken,verifytoken,Usercontroller.updateUser)
 
+router.post('/updatebank',checktoken,verifytoken,Usercontroller.Ubinform)
+
 router.delete('/:user_id',checktoken,verifytoken,Usercontroller.deleteUser)
 
 router.post('/updatePassword/:user_id',checktoken,verifytoken,Usercontroller.updatePassword)
@@ -57,6 +59,10 @@ router.post('/getdailybonus',Dailybonuscontroller.getdailybonus)
 router.post('/createroom',Roomcontroller.createroom)
 
 router.post('/getroominfo',Roomcontroller.getroominfo)
+
+router.post('/uniquegameid',Usercontroller.uniquegameid)
+
+
 
 
 module.exports = router;

@@ -407,6 +407,50 @@ const getAllChalange = async (req, res) => {
     }
 }
 
+// 14. Unique Game Id
+
+const uniquegameid = async(req,res) => {
+
+    const characters ='ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+
+        function generateString(length) {
+           let result ='';
+           const charactersLength = characters.length;
+            for ( let i = 0; i < length; i++ ) {
+                result += characters.charAt(Math.floor(Math.random() * charactersLength));
+            }
+
+           return result;
+        }
+        // console.log(generateString(10));
+
+        let ugameid = generateString(10);
+
+            return res.json({
+              Gameid : ugameid
+            })
+
+}
+
+// 15. Update Bank Information
+
+const Ubinform = async (req,res) => {
+    const body = req.body;
+
+    const updatebinform = await Player.update(req.body,{where: {user_id : req.body.user_id}})
+    if(updatebinform){
+        return res.json({
+            status : 1,
+            message : "Bank Information Successfully Updated"
+        })
+    }else{
+        return res.json({
+            status : 0,
+            message : "Sorry! Bank Information Update Failed"
+        })
+    }
+}
+
 
 module.exports = {
     addUser,
@@ -421,5 +465,7 @@ module.exports = {
     PurchaseCoin,
     AdCoin,
     BalanceDetails,
-    getAllChalange
+    getAllChalange,
+    uniquegameid,
+    Ubinform
 };
