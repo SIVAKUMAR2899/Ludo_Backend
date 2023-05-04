@@ -368,11 +368,11 @@ const getAllChalange = async (req, res) => {
         let bid_amount = challange[i].bid_amount;
 
         let users = await Player.findAll({Player});
+
         for (var j = 0; j < users.length; j++) {
             userid = users[j].user_id;
-            
-        
-        console.log("userid"+userid);
+            // console.log("userid"+userid);
+
         var user = await Player.findOne({ where: { user_id: userid } });
 
         const dataObj = new Object();
@@ -382,19 +382,22 @@ const getAllChalange = async (req, res) => {
 
         tdata.push(dataObj)
         }
+
+        
         const userObj = new Object();
         userObj.challenge_id = chalange_id;
         userObj.challenge_name = chalange_name;
         userObj.Bid_amount = bid_amount;
+        userObj.userdata = tdata;
        
         total.push(userObj);
         
     }
-    console.log(total)
+    // console.log(total)
 
     if(total){
         return res.status(200).json({
-            data:[total,{"userdata":tdata}]
+            data:total
         })
     }else{
         return res.json({

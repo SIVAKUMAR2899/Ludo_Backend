@@ -6,6 +6,7 @@ const shopdatacontroller = require('../controllers/shopdatacontroller');
 const Winpercentcontroller = require('../controllers/winpercentcontroller');
 const UserStaticcontroller = require('../controllers/userstaticcontroller');
 const Dailybonuscontroller = require('../controllers/dailybonuscontroller');
+const Roomcontroller = require('../controllers/roomcontroller');
 
 const {checktoken} = require('../auth/checktoken');
 const { verifytoken } = require('../auth/verifytoken');
@@ -52,6 +53,8 @@ router.post('/winningpercentage',Winpercentcontroller.getwinpercent)
 router.post('/saveUserStatistics',UserStaticcontroller.addUserstatic)
 
 router.post('/getdailybonus',Dailybonuscontroller.getdailybonus)
+
+router.post('/createroom',Roomcontroller.createroom)
 
 
 module.exports = router;

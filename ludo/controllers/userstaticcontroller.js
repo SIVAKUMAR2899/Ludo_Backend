@@ -68,29 +68,6 @@ const addUserstatic = async (req, res) => {
         }
     }
 
-
-
-
-
-    // const userstatic = await UserStatic.create({id:null,user_id:req.body.user_id,json_data:someObj,date:dateTime});
-
-    // // let userstaticid = await UserStatic.findOne({ where: { user_id: req.body.user_id } });
-    // let usid = userstaticid.id;
-    // console.log(usid);
-    // const usergameinfo = await Usergameinfo.create({id:null,static_id:usid,user_id:req.body.user_id,json_data:gameplayjson,date:dateTime});
-
-    // if(usergameinfo){
-    //     res.status(200).json({
-    //         code: res.statusCode,
-    //         data: userstatic,
-    //         message: 'UserStatics saved successfully'
-    //     });
-    // }else{
-    //     return res.json({
-    //         status:0,
-    //         message:"UserStatics doesn't saved"
-    //     });
-    // }
 }
 
 module.exports = {

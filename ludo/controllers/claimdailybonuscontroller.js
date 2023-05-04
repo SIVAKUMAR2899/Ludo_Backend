@@ -46,6 +46,14 @@ const addbonus = async (req, res) => {
     }
     console.log(Bonus);
 
+    let cdbonus= await Dailybonus.findOne({ where : { user_id : userid , bonus : Bonus }}); 
+
+    if(cdbonus){
+        return res.json({
+            status:0,
+            message:"Bonus Already Claimed"
+        })
+    }else{
         const Dbonus = await Dailybonus.create({id:null,user_id:req.body.user_id,bonus:Bonus,date:dateTime});
         if(Dbonus){
             res.status(200).json({
@@ -59,6 +67,9 @@ const addbonus = async (req, res) => {
                 message:"Bonus doesn't claimed"
             });
         }
+
+    }
+        
     }
 
 

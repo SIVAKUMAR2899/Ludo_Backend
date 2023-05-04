@@ -48,6 +48,7 @@ db.winning_percentages = require('./winningpercentagemodel')(sequelize, DataType
 db.user_statistics = require('./userstaticmodel')(sequelize, DataTypes)
 db.user_game_infos = require('./usergameinfomodel')(sequelize, DataTypes)
 db.app_daily_bonus = require('./dailybonusmodel')(sequelize, DataTypes)
+db.rooms = require('./roommodel')(sequelize, DataTypes)
 
 db.sequelize.sync({ force: false })
 .then(() => {
