@@ -56,5 +56,7 @@ router.post('/getdailybonus',Dailybonuscontroller.getdailybonus)
 
 router.post('/createroom',Roomcontroller.createroom)
 
+router.post('/getroominfo',Roomcontroller.getroominfo)
+
 
 module.exports = router;
