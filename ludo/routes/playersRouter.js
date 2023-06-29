@@ -7,6 +7,7 @@ const Winpercentcontroller = require('../controllers/winpercentcontroller');
 const UserStaticcontroller = require('../controllers/userstaticcontroller');
 const Dailybonuscontroller = require('../controllers/dailybonuscontroller');
 const Roomcontroller = require('../controllers/roomcontroller');
+const Resultcontroller = require('../controllers/resultcontroller');
 
 const {checktoken} = require('../auth/checktoken');
 const { verifytoken } = require('../auth/verifytoken');
@@ -61,6 +62,10 @@ router.post('/createroom',Roomcontroller.createroom)
 router.post('/getroominfo',Roomcontroller.getroominfo)
 
 router.post('/uniquegameid',Usercontroller.uniquegameid)
+
+router.post('/addresult',Resultcontroller.addresult)
+
+router.post('/updateresult',Resultcontroller.updateresult)
 
 
 

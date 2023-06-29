@@ -238,6 +238,8 @@ const PurchaseGems = async (req, res) => {
         gems = 1000;
     }else if(gemsid == 6){
         gems=500;
+    }else {
+        gems = 0;
     }
 
     let user = await Player.findOne({ where: { user_id: user_id } });
@@ -274,7 +276,10 @@ const PurchaseCoin = async (req, res) => {
         coins = 10000;
     }else if(coinid == 3){
         coins = 1000;
+    }else{
+        coins = 0;
     }
+    
     let user = await Player.findOne({ where: { user_id: user_id } });
     let usercoins = user.total_coins;
     console.log(usercoins);
