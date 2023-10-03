@@ -8,6 +8,8 @@ const UserStaticcontroller = require('../controllers/userstaticcontroller');
 const Dailybonuscontroller = require('../controllers/dailybonuscontroller');
 const Roomcontroller = require('../controllers/roomcontroller');
 const Resultcontroller = require('../controllers/resultcontroller');
+const Paywithdrawcontroller = require('../controllers/paymentwithdrawcontroller');
+const Payhistorycontroller = require('../controllers/paymenthistorycontroller');
 
 const {checktoken} = require('../auth/checktoken');
 const { verifytoken } = require('../auth/verifytoken');
@@ -67,7 +69,13 @@ router.post('/addresult',Resultcontroller.addresult)
 
 router.post('/updateresult',Resultcontroller.updateresult)
 
+router.post('/addwithdraw',Paywithdrawcontroller.addpaymentwithdraw)
 
+router.post('/updatewithdraw',Paywithdrawcontroller.updatepaymentwithdraw)
+
+router.post('/addhistory',Payhistorycontroller.addpaymenthistory)
+
+router.post('/updatehistory',Payhistorycontroller.updatepaymenthistory)
 
 
 module.exports = router;

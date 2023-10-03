@@ -50,6 +50,9 @@ db.user_game_infos = require('./usergameinfomodel')(sequelize, DataTypes)
 db.app_daily_bonus = require('./dailybonusmodel')(sequelize, DataTypes)
 db.rooms = require('./roommodel')(sequelize, DataTypes)
 db.tournment_results = require('./resultmodel')(sequelize, DataTypes)
+db.payment_widthdrawal = require('./paymentwithdrawmodel')(sequelize, DataTypes)
+db.payment_history = require('./paymenthistorymodel')(sequelize, DataTypes)
+
 
 db.sequelize.sync({ force: false })
 .then(() => {
